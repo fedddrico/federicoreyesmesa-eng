@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>have my life</title>
+      <link rel="icon" href="https://cdn.glitch.global/f8f901fe-da65-45d5-9064-958ed8e15e15/esto%20es%20un%20jardi%CC%81n.png?v=1722951919169" type="image/png">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      
+      body {
+        height: 100vh;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        height: 100%;
+      }
+      .column {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+        border-right: 1px solid blue;
+      }
+      
+      
+      .column.arte {
+        position: relative; 
+      }
+      
+      .column.curaduría {
+        position: relative; 
+      }
+
+      .cv {
+        background-color: white; /* Rosa claro */
+      }
+
+      .arte {
+        background-color: white; /* Azul muy claro */
+      }
+
+      .curaduría {
+        background-color: white; /* Gris claro */
+      }
+
+      .column:last-child {
+        border-right: none;
+      }
+     
+      img {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+     
+      p {
+        margin-bottom: 16px;
+      }
+     
+      pre {
+        font-size: 10px;
+        font-family: "Courier New", monospace;
+        color: blue;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .inner-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 0px;
+      }
+
+      .subcol p {
+        margin-bottom: 0px;
+      }
+
+      .column img {
+        width: 100%;
+      }
+      
+      .dropdown {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 100;
+      }
+
+      .dropdown select {
+        padding: 0px;
+        font-size: 10px;
+        border-radius: 0px;
+        background-color: blue;
+        color: white;
+        width: 17px;
+
+      }  
+      
+      #ventana {
+        width: 400px;
+        padding: 15px;
+        color: white;
+        background: blue;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        cursor: move;
+        font-size: 10px;
+        font-family: "Courier New", monospace;
+      }
+      
+      
+      #barra {
+        font-weight: bold;
+        font-size: 15px;
+        background: blue;
+        padding: 5px;
+        cursor: move;
+        text-align: center;
+      }
+
+      #cerrar {
+        float: right;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+      }
+
+      #contenido {
+        margin-top: 10px;
+      }
+      
+      a {
+        color: white;
+        font-size: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        text-decoration: underline;
+        }
+      
+      .language-switcher {
+        background-color: blue;
+        color: white;
+        padding: 2px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 10px;
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        z-index: 100;
+      }
+
+      .language-switcher span {
+        cursor: pointer;
+        margin: 0 5px;
+        text-decoration: none;
+      }
+
+      .language-switcher .active {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+<div class="language-switcher">
+<span id="esp">esp</span> /
+<span id="eng" class="active">eng</span>
+</div>
+    
+<div class="container">
+  
+<div id="ventana">
+<div id="barra">
+🍉🇵🇸🍉
+<span id="cerrar">x</span>
+</div>
+<div id="contenido">
+<p>secure links to support various Palestinian causes</p>
+<p><a href="https://www.adalahjusticeproject.org/" target="_blank">Adalah Justice Project</a></p>
+<p><a href="https://www.map.org.uk/" target="_blank">Medical Aid for Palestine</a></p>
+<p><a href="https://www.patreon.com/decolonizepalestine?fbclid=PAZXh0bgNhZW0CMTEAAafn8Zi_zHEaeUwnnk0VdhxT5o3sAiVhooaqXyoDT9J7w7WT0dMfTr7tkWcrVw_aem_5RBFCF24J76pqk2JnQOejw" target="_blank">Decolonize Palestine</a></p>
+<p><a href="https://act.uscpr.org/a/maindonate?fbclid=PAZXh0bgNhZW0CMTEAAaehJ9bbtJ_3YQ7V5EjvUdaezorFd_LiOeZmUVJvzXhAdgkDxHA21npDopN-1Q_aem_hQWQ5jpQRcT4y_bDwZQPpQ" target="_blank">US Campaign for Palestinian Lives</a></p>
+<p><a href="https://samidoun.net/" target="_blank">Samidoun: Palestinian Prisioners Solidarity Network</a></p>
+</div>
+</div>
+      
+<!-- columna 1: portafolio -->
+<div class="column arte">
+  
+<div class="dropdown">
+<select onchange="if(this.value) window.open(this.value, '_self')">
+<option value=""></option>
+<option value="perdón_por_tanto_y_gracias_por_tan_poco_instalación.html">perdón por tanto y gracias por tan poco (installations) - 2024-2025</option>
+<option value="mi_compu_tiene_miedo_de_morirse.html">mi compu tiene miedo de morirse - 2024</option>
+<option value="amoramoramor.html">amoramoramor - 2023-2024</option>
+<option value="perdón_por_tanto_y_gracias_por_tan_poco.html">perdón por tanto y gracias por tan poco - 2023-2024</option>
+<option value="no_prometo_nada.html">no prometo nada - 2024</option>
+<option value="espérame.html">espérame - 2022</option>
+<option value="diseño_visual.html">diseño visual - 2017-2025</option>
+</select>
+</div>
+  
+<pre>
+<b>portfolio</b>
+<a href="perdón_por_tanto_y_gracias_por_tan_poco_instalación.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/54508980655_fd4b3d84cd_k.jpg?v=1747504222563" alt="Imagen 1">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>perdón por tanto y gracias por tan poco
+—sorry for so much and thank you for so little (intallation views)—</em>
+2024-2025
+</pre>
+</div>
+<div class="subcol">
+<pre>
+installation views of <em>perdón por tanto y gracias por tan poco</em>.
+</pre>
+</div>
+</div>
+
+<a href="mi_compu_tiene_miedo_de_morirse.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/Federico%20Reyes%20Mesa%2C%20will%20i%20burn%20down%20my%20house%3F.jpg?v=1747343741507" alt="Imagen 1">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>mi compu tiene miedo de morirse
+—my computer is afraid of dying—</em>
+2024
+</pre>
+</div>
+<div class="subcol">
+<pre>
+website developed as part of the curatorial residency at the museo de arte moderno de bogotá in 2024.
+</pre>
+</div>
+</div>
+       
+<a href="amoramoramor.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/still5.jpg?v=1747254812058" alt="Foto 2">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>amoramoramor</em>
+2024-2025
+</pre>
+</div>
+<div class="subcol">
+<pre>
+collection of three static and primitive websites.
+</pre>
+</div>
+</div>
+
+<a href="perdón_por_tanto_y_gracias_por_tan_poco.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/Federico%20Reyes%20Mesa%2C%20poolparteeey.jpg?v=1747343725686" alt="Foto 3">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>perdón por tanto y gracias por tan poco
+—sorry for so much and thank you for so little—</em>
+2023-2025
+</pre>
+</div>
+<div class="subcol">
+<pre>
+collection of multiple static and primitive websites.
+</pre>
+</div>
+</div>
+
+<a href="no_prometo_nada.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/DSC07989.jpg?v=1747346921869" alt="Foto 3">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>no prometo nada
+—no promises—</em>
+2024
+</pre>
+</div>
+<div class="subcol">
+<pre>
+site-specific installation developed within the framework of the <em>cachorra</em> residency.
+</pre>
+</div>
+</div>
+
+<a href="espérame.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/IMG-20220324-WA0018.jpg?v=1747349857179" alt="Foto 3">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>espérame
+—wait for me—</em>
+2022
+</pre>
+</div>
+<div class="subcol">
+<pre>
+video-action, woven bag and carved stones.
+</pre>
+</div>
+</div>
+
+<a href="diseño_visual.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/image-ea510c59-fbef-4142-8121-a36b76859f4d.webp?v=1747604441805" alt="Foto 3">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>visual design</em>
+2017-2025
+</pre>
+</div>
+<div class="subcol">
+<pre>
+visual design projects, with emphasis on editorial design and design for exhibitions and cultural events
+</pre>.
+</div>
+</div>
+</pre>
+</div>
+  
+  
+<div class="column curaduría">
+
+<div class="dropdown">
+<select onchange="if(this.value) window.open(this.value, '_self')">
+<option value=""></option>
+<option value="la_distancia_entre_las_cosas_que_hacen_ruido.html">la distancia entre las cosas que hacen ruido - 2025</option>
+<option value="coleccion_en_escena.html">colección en escena #5 - fetiche: conversaciones materiales - 2024</option>
+<option value="los_tempos_2024.html.html">los tempos de las memorias, músicas y experiencias - 2024</option>
+<option value="la_barca_itinerante.html">la barca itinerante: archivo plural del 46sna - 2022</option>
+<option value="la_barca_del_46.html">la barca del 46: archivo plural del 46sna - 2022</option>
+<option value="no_prometo_nada.html">río adentro - 2022</option>
+</select>
+</div>
+  
+<pre>
+<b>curatorial practice</b>
+<a href="la_distancia_entre_las_cosas_que_hacen_ruido.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/Vistas%20de%20Inst_%20la%20distancia_GDzg-12.jpg?v=1747665332796" alt="Foto 3">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>la distancia entre las cosas que 
+hacen ruido
+—the space between the things
+that make noise—</em>
+proyecto binario
+curator
+2025
+</pre>
+</div>
+<div class="subcol">
+<pre>
+group exhibition by daniel blanco and raquel moreno </pre>.
+</div>
+</div>
+
+<a href="coleccion_en_escena.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/mambo-%20Fetiche%20-%20Vista%20de%20intalacio%CC%81n%20-%20GDzg-15.jpg?v=1747348587764" alt="Foto 2">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>colección en escena #5 - fetiche: conversaciones materiales
+—collection on stage #5 - fetish: material conversations—</em>
+assistant curator
+museo de arte moderno de bogotá - mambo
+2024
+</pre>
+</div>
+<div class="subcol">
+<pre>
+exhibition of the ‘collection on stage’ line of the museum of modern art of bogotá. 
+</pre>
+</div>
+</div>
+
+<a href="los_tempos_2024.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/WhatsApp%20Image%202025-05-18%20at%201.36.33%20PM.jpeg?v=1747593437479" alt="Foto 2">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>los tempos de las memorias, músicas y experiencias
+—the rhythms of memories, music and experiences—</em>
+curator
+museo panóptico de ibagué
+tolima, colombia
+2024
+</pre>
+</div>
+<div class="subcol">
+<pre>
+exhibition of results of musical education processes in colombia.</pre>
+</div>
+</div>
+
+<a href="la_barca_itinerante.html">
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/WhatsApp%20Image%202024-07-10%20at%2012.42.07.jpeg?v=1747348087940" alt="Imagen 1">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>la barca itinerante: archivo plural del 46sna
+—the travelling boat: 46sna's plural archive—</em>
+curator
+itinerante
+2022
+</pre>
+</div>
+<div class="subcol">
+<pre>
+itinerant exhibition of the results of 46sna training and mediation processes.
+</pre>
+</div>
+</div>
+     
+<a href="la_barca_del_46.html">   
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/enhanced_IMG-20220729-WA0009.png?v=1747348350240" alt="Imagen 1">
+</a>
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>la barca del 46: archivo plural del 46sna
+—the 46's boat, 46sna's plural archive—</em>
+curator
+museo nacional de colombia
+2022
+</pre>
+</div>
+<div class="subcol"
+<pre>
+presentation of the results of 46sna's education and mediation processes.
+</div>
+</div>
+
+
+
+<img src="https://cdn.glitch.global/63b24cc3-6c11-48ab-a26a-624552856139/agosto_rioadentro1_01.jpg?v=1747348937750" alt="Foto 3">
+<div class="inner-columns">
+<div class="subcol">
+<pre>
+<em>río adentro #1, 2 3 y 4</em>
+publicación seriada - 46 salón nacional de artistas
+curator
+2022
+</pre>
+</div>
+<div class="subcol"
+<pre>
+a serial publication that sought to make visible various educational and mediation processes developed in the 46th National Artists' Salon in different municipalities of the country.
+</div>
+</div>
+
+</pre>
+</div>
+
+      <!-- Columna 3: CV -->
+<div class="column cv">
+<pre>
+<b>cv</b>
+      
+<b>federico reyes mesa</b>
+artist, curator, researcher  
+federicoreyesmesa@gmail.com  
+@fedddrico  
+bogotá, colombia  
+
+<b>interests:</b> poetic computation, digital affects, internet culture, virtual relationality, text-based art, expanded poetry, electronic installation, net art, sound art, video art, collective and collaborative practices, counter-productivist and anticapitalist practices, visual design, editorial design.
+
+<b>education</b>  
+<em>master’s degree in cultural studies</em>  
+universidad de los andes  
+bogotá, colombia  
+2020–2022  
+
+<em>bachelor’s degree in visual arts</em>  
+universidad javeriana  
+bogotá, colombia  
+2014–2019  
+
+<b>additional education</b>  
+<em>relational reconstructions</em>  
+school for poetic computation  
+ny, united states  
+2025  
+
+<em>digital restoration lab</em>  
+cinemateca de bogotá  
+bogotá, colombia  
+2024  
+
+<em>wayward sentences</em>  
+school for poetic computation  
+ny, united states  
+2024  
+
+<em>marx for all: genealogies of radical thought</em>  
+institute for social change and cultural studies  
+madrid, spain  
+2022  
+
+<em>who stole our future?: from cultural studies to mark fisher</em>  
+institute for social change and cultural studies  
+madrid, spain  
+2021  
+
+<b>residencies</b>  
+<em>museo de arte moderno de bogotá – mambo</em>  
+curator-in-residence  
+bogotá, colombia  
+2024  
+
+<em>cachorra</em>  
+artist-in-residence  
+bogotá, colombia  
+2024  
+
+<em>r.a.r.o. buenos aires</em>  
+artist-in-residence  
+buenos aires, argentina  
+2021  
+
+<b>curatorial practice</b>  
+<em>the space between the things that make noise</em>  
+curator of group exhibition  
+proyecto binario  
+bogotá, colombia  
+2025  
+
+<em>fetish: material conversations</em>  
+curatorial and research assistant for collection-based exhibition  
+museo de arte moderno de bogotá – mambo  
+bogotá, colombia  
+2024  
+
+<em>the rythms of memory, music and experiences</em>  
+curator of grassroots and collective exhibition  
+museo panóptico de ibagué  
+ibagué, colombia  
+2024  
+
+<em>the 46's boat: 46sna's plural archive</em>  
+curator of grassroots and collective exhibition  
+museo nacional de colombia, bogotá headquarters; and multiple locations across bogotá (itinerant version)  
+bogotá, colombia  
+2023  
+
+<b>group exhibitions as an artist</b>  
+<em>dueños del 1920x1080</em>  
+curated by nmenos1 (juan covelli, tatyana zambrano, and lina useche)  
+artbo salas, cámara de comercio de bogotá, chapinero  
+bogotá, colombia  
+2025  
+
+<em>between fascination and fear: xi uniandino arts award</em>  
+curated by ana maría montenegro, carmen gil vrolijk, and yomayra puentes-rivera  
+galería espacio alterno  
+bogotá, colombia  
+2024  
+
+<em>mucho texto</em>  
+curated by valentina cadena renza and manuel hernández rivera  
+apartamento  
+bogotá, colombia  
+2024  
+
+<em>permutaciones leves</em>  
+curated by celina marco (argentina)  
+casa belgrado  
+buenos aires, argentina  
+2021  
+
+<em>visual salon</em>  
+curated by bacánika  
+corferias  
+bogotá, colombia  
+2017  
+
+<em>pictórica v.3</em>  
+curated by josé rosero  
+casatinta  
+bogotá, colombia  
+2017  
+
+<em>colombian art in the us</em>  
+curated by volcán ediciones  
+various venues in miami and new york  
+2017  
+
+<b>solo circulation</b>  
+<em>no promises</em>  
+site-specific installation  
+curated by ana mustafá and nicolás barrera  
+cachorra 
+bogotá, colombia  
+2024  
+
+<b>professional experience</b>  
+<em>ministry of cultures, arts and knowledge of colombia</em>  
+advisor on research, creation and circulation processes in various programs of the arts directorate, including: 46th national artists salon (2022); women, arts and care program (2023); territorial education in the <em>national music for coexistence plan</em> (2024); education actions of the dance group (2024); artistic education actions in prisons under the <em>sounds for peacebuilding</em> program (2025); among others.  
+may 2022 – april 2025  
+
+<em>iom – regional office for central america, north america and the caribbean</em>  
+editorial consultant  
+september 2019 – january 2020  
+
+<em>espacio odeón</em>  
+production assistant and visual designer  
+january 2019 – april 2020  
+
+<b>publications</b>  
+<em>mirada múltiple: archivo fotográfico del museo de arte moderno de bogotá</em>  
+contributor  
+archival research product  
+may 2025  
+
+<em>fracture, melancholy and impossibility: mariátegui’s socialism, josé maría arguedas’ literature and indigenous social becoming</em>  
+author  
+perífrasis journal – indexed (peer-reviewed – q2)  
+may 2022 – april 2025  
+
+<em>tejer el cuidado</em>  
+editor  
+social memory – women, arts and care program, and ministry of arts, cultures and knowledge  
+2024  
+
+<em>río adentro 1, 2, 3 and 4</em>  
+editor  
+serial publication – mediation and training for the 46sna and the ministry of arts, cultures and knowledge  
+2022  
+
+<b>awards and recognitions</b>  
+<em>xi uniandino arts award</em>  
+first place  
+2024
+
+      </pre>
+      </div>
+    </div>
+
+
+<script>
+  // Botón de cerrar
+  document.getElementById("cerrar").onclick = function () {
+    document.getElementById("ventana").style.display = "none";
+  };
+
+  // Hacer toda la ventana draggable
+  const ventana = document.getElementById("ventana");
+  let offsetX = 0, offsetY = 0, isDragging = false;
+
+  ventana.addEventListener('mousedown', (e) => {
+    // Evitar arrastrar si se hace clic en un enlace
+    if (e.target.tagName.toLowerCase() === 'a') return;
+
+    isDragging = true;
+    offsetX = e.clientX - ventana.offsetLeft;
+    offsetY = e.clientY - ventana.offsetTop;
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    ventana.style.left = (e.clientX - offsetX) + 'px';
+    ventana.style.top = (e.clientY - offsetY) + 'px';
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  }
+</script>
+<script>
+  const esp = document.getElementById("esp");
+  const eng = document.getElementById("eng");
+
+  // Marcamos ENG como activo por defecto
+  eng.classList.add("active");
+  esp.classList.remove("active");
+
+  esp.addEventListener("click", () => {
+    // Redirige al sitio en español
+    window.location.href = "https://federicoreyesmesa.glitch.me/"; // cambia este enlace al real
+  });
+
+  eng.addEventListener("click", () => {
+    // Solo actualizar estilo visual si se quiere mantener en la misma página
+    eng.classList.add("active");
+    esp.classList.remove("active");
+  });
+</script>
+
+  </body>
+</html>
